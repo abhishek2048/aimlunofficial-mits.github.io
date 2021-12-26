@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width= initial-scale=1.0" />
+  <title>Introduction to Computer Programming (Books) </title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Lato:ital@1&display=swap");
+
+    * {
+      margin: 0%;
+      padding: 0%;
+      font-family: "Lato", sans-serif;
+      scrollbar-width: none;
+     
+    }
+
+
+    :root {
+      --clr: #ffffff;
+      --clrr: #0b0c10;
+    }
+
+    body{
+     height: 20em;
+
+    }
+
+
+    header {
+      background-color: rgba(11, 12, 16, 1);
+      height: 100vh;
+      width: 100%;
+      z-index: -1;
+    }
+
+    nav {
+      background-color: rgba(11, 12, 16, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      text-transform: capitalize;
+      width: 100%;
+      height: 9vh;
+      padding-top: 1em;
+
+
+    }
+
+    nav h5 a {
+      text-decoration: none;
+      font-size: 2.8em;
+      color: #66fcf1;
+    }
+
+    nav ul li {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    nav ul li a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 50px;
+      text-decoration: none;
+      font-size: 1.4em;
+      font-weight: 400;
+      color: #c5c6c7;
+      position: relative;
+      width: 80px;
+    }
+
+    nav ul li a:last-child {
+      margin-right: 0;
+
+    }
+
+    nav ul li a::before,
+    nav ul li a::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: #66fcf1;
+      left: 0;
+      transform: scaleX(0);
+      transition: all .5s;
+
+    }
+
+    nav ul li a::before {
+      top: 0;
+      transform-origin: left;
+
+    }
+
+    nav ul li a::after {
+      bottom: 0;
+      transform-origin: right;
+
+    }
+
+    nav ul li a:hover::before,
+    nav ul li a:hover::after {
+
+      transform: scaleX(1);
+    }
+
+    .belownav {
+      height: 3px;
+      position: absolute;
+      top: 80px;
+      width: 100%;
+      background-color: #66fcf1;
+
+
+    }
+
+    #classesicpbooks{
+      margin-top: 0px;
+      margin-bottom: 10px;
+      padding-top: 0.7em;
+      font-size: 3.5em;
+      font-weight: bold;
+      text-align: center;
+      color: #c5c6c7;
+      /** text-transform: capitalize;**/
+      word-spacing: 0px;
+      letter-spacing: 2px;
+    }
+
+    .hrbelow2 {
+      display: block;
+      margin-top: 00px;
+      margin-left: 6%;
+
+    }
+
+    .hrbelow2 hr {
+      height: 3px;
+      width: 93%;
+      color: blue;
+      background-color: #c5c6c7;
+      margin-bottom: 10px;
+      /** position: absolute;
+        left: 200px;
+        top: 100px;**/
+    }
+
+    .heading {
+
+      margin-top: 30px;
+
+    }
+
+    .container {
+      margin-top: 4.5em;
+     /*** margin-left: 10vh;
+      margin-right: 10vh;
+      margin-bottom: 15vh;***/
+      display: grid;
+      grid-template-rows: repeat(1, 1fr);
+      grid-template-columns: repeat(1, 1fr);
+      grid-column-gap: 40px;
+      grid-row-gap: 80px;
+      justify-items: center;
+      background-color: #0b0c10;
+    }
+
+    /** .container1,
+        .container3,
+        .container5 {
+            margin-top: 20vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+        }**/
+
+    .card {
+      height: 300px;
+      width: 225px;
+      margin-top: 25px;
+      position: relative;
+      perspective: 1000px;
+      padding-top: 20px;
+      text-transform: capitalize;
+      font-size: 20px;
+      background-color: #66fcf1;
+      opacity: 0.8;
+      border-radius: 5%;
+    }
+
+    .card:hover .card-front {
+      transform: rotateY(-90deg);
+    }
+
+    .card .card-front {
+      transform: rotateY(0);
+      transition: all 0.5s ease-in-out 0s;
+      text-transform: capitalize;
+      font-size: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .card .card-front .img {
+      transform: translateY(-59px);
+      height: 60px;
+      width: 60px;
+      color: #c5c6c7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #0b0c10;
+      border-radius: 80%;
+      border: 6px solid var(--clrr);
+      font-weight: bolder;
+      font-size: 50px;
+    }
+
+    /**.card .card-front img {
+        transform: translateY(-65px);
+        background-color: #ffffff;
+        border-radius: 30%;
+        border: 6px solid var(--clr);
+      }**/
+
+    .card .card-front h6 {
+      text-align: center;
+      font-size: 30px;
+    }
+
+    .card-back {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0%;
+      left: 0%;
+      padding: 60px 20px;
+      border: 1px solid #000;
+      box-sizing: border-box;
+      text-align: center;
+      color: #0b0c10;
+      background-color: #c5c6c7;
+      transform: rotateY(90deg);
+      transition: all 0.5s ease-in-out 0s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      border-radius: 5%;
+    }
+
+    .card .card-back .img {
+      /** transform: translateY(-5vh);**/
+      position: absolute;
+      top: -15%;
+      left: 30%;
+      height: 60px;
+      width: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #0b0c10;
+      border-radius: 90%;
+      border: 6px solid var(--clrr);
+      font-weight: bolder;
+      color: #c5c6c7;
+      font-size: 50px;
+    }
+
+    .card-back .links {
+      margin-top: 15px;
+      /**transform: translateY(-35px);**/
+      line-height: 50px;
+      /** padding-top: 50px;**/
+    }
+
+    .card-back a {
+      text-decoration: none;
+      font-size: 30px;
+      margin-top: 25px;
+      font-family: 'lato';
+      color: #000;
+      font-weight: bold;
+    }
+
+    /** .card-back .linkslab {
+            transform: translateY(-10px);
+
+        }**/
+
+    .card-back .linkslab a {
+      text-decoration: none;
+      font-size: 30px;
+    }
+
+    .card:hover .card-back {
+      transform: rotateY(0deg);
+    }
+
+    .card .card-back img {
+      transform: translateY(-85px);
+      background-color: #ffffff;
+      border-radius: 30%;
+      border: 6px solid var(--clr);
+    }
+
+    .card .card-back .labimg {
+      transform: translateY(-50px);
+      background-color: #ffffff;
+      border-radius: 30%;
+      border: 6px solid var(--clr);
+    }
+
+    /** .container2,
+        .container4 {
+
+            margin-top: 14vh;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+
+        }**/
+
+    #BEEE {
+      margin-left: 5px;
+      margin-top: -10px;
+    }
+
+    #EEES {
+      margin-left: 5px;
+      margin-top: -10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav>
+
+      <h5><span><a href="">AIML</a></span></h5>
+      <ul>
+        <li>
+          <a href="">home</a>
+          <a href="">classes</a>
+          <a href="">books</a>
+          <a href="">lectures</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="heading">
+      <div class="belownav">
+        <hr>
+      </div>
+      <h1 id="classesicpbooks">Introduction to Computer Programming (Books)</h1>
+      <div class="hrbelow2">
+        <hr>
+        <hr>
+      </div>
+    </div>
+  
+    <div class="container">
+      <div class="card">
+        <div class="card-front">
+          <div class="img">1</div>
+          <h6>unit - I</h6>
+        </div>
+        <div class="card-back">
+          <div class="img">1</div>
+          <a href="https://drive.google.com/file/d/1islCJdOIKg8s7xqoBsUDwtOOOAb7RzRP/view?usp=sharing" target="_blank"
+            rel="noopener noreferrer">PDF</a>
+        </div>
+      </div>
+
+     <!--- <div class="card">
+        <div class="card-front">
+          <div class="img">2</div>
+          <h6>applications of machine learning</h6>
+        </div>
+        <div class="card-back">
+          <div class="img">2</div>
+          <div class="linkslab">
+            <a href="http://moodle.mitsgwalior.in/mod/attendance/view.php?id=62347" target="_blank"
+              rel="noopener noreferrer">Attendance</a>
+            <a href="https://meet.google.com/taa-sizf-qoi" target="_blank" rel="noopener noreferrer">
+              Live class</a>
+            <a href="http://moodle.mitsgwalior.in/mod/attendance/view.php?id=62348" target="_blank"
+              rel="noopener noreferrer">lab attend.</a>
+            <a href="https://meet.google.com/ysk-reod-evn" target="_blank" rel="noopener noreferrer">lab class</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-front">
+          <div class="img">3</div>
+          <h6 id="maths">syllabus discussion</h6>
+        </div>
+        <div class="card-back">
+          <div class="img">3</div>
+          <div class="links">
+            <a href="http://moodle.mitsgwalior.in/mod/attendance/view.php?id=62051" target="_blank"
+              rel="noopener noreferrer">Attendance</a>
+            <a href="https://meet.google.com/dev-anyw-wue" target="_blank" rel="noopener noreferrer">
+              Live class</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-front">
+          <div class="img">4</div>
+          <h6>types of machine learning</h6>
+        </div>
+        <div class="card-back">
+          <div class="img">4</div>
+          <div class="links">
+            <a href="http://moodle.mitsgwalior.in/mod/attendance/view.php?id=62038" target="_blank"
+              rel="noopener noreferrer">Attendance</a>
+            <a href="https://meet.google.com/xve-xdbg-zjm" target="_blank" rel="noopener noreferrer">
+              Live class</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-front">
+          <div class="img">5</div>
+          <h6 id="BEEE">maths for machine learning</h6>
+        </div>
+        <div class="card-back">
+          <div class="img">5</div>
+          <div class="linkslab">
+            <a href="http://moodle.mitsgwalior.in/mod/attendance/view.php?id=61602" target="_blank"
+              rel="noopener noreferrer">Attendance</a>
+            <a href="https://meet.google.com/fmj-nneu-ojk" target="_blank" rel="noopener noreferrer">
+              Live class</a>
+            <a href="http://moodle.mitsgwalior.in/mod/attendance/view.php?id=61605" target="_blank"
+              rel="noopener noreferrer">lab attend.</a>
+            <a href="https://meet.google.com/fmj-nneu-ojk" target="_blank" rel="noopener noreferrer">lab class</a>
+          </div>
+        </div>
+      </div>--->
+    </div>
+  </header>
+</body>
+
+</html>

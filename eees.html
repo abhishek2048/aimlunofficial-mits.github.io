@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width= initial-scale=1.0" />
+  <title>Energy, Ecology, Environment & Society </title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Lato:ital@1&display=swap");
+
+    * {
+      margin: 0%;
+      padding: 0%;
+      font-family: "Lato", sans-serif;
+      scrollbar-width: none;
+    }
+
+    :root {
+      --clr: #ffffff;
+      --clrr: #0b0c10;
+    }
+
+
+    header {
+      background-color: rgba(11, 12, 16, 1);
+      height: 87em;
+      width: 100%;
+      z-index: -1;
+    }
+
+    nav {
+      background-color: rgba(11, 12, 16, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      text-transform: capitalize;
+      width: 100%;
+      height: 9vh;
+      padding-top: 1em;
+
+
+    }
+
+    nav h5 a {
+      text-decoration: none;
+      font-size: 2.8em;
+      color: #66fcf1;
+    }
+
+    nav ul li {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    nav ul li a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 50px;
+      text-decoration: none;
+      font-size: 1.4em;
+      font-weight: 400;
+      color: #c5c6c7;
+      position: relative;
+      width: 80px;
+    }
+
+    nav ul li a:last-child {
+      margin-right: 0;
+
+    }
+
+    nav ul li a::before,
+    nav ul li a::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: #66fcf1;
+      left: 0;
+      transform: scaleX(0);
+      transition: all .5s;
+
+    }
+
+    nav ul li a::before {
+      top: 0;
+      transform-origin: left;
+
+    }
+
+    nav ul li a::after {
+      bottom: 0;
+      transform-origin: right;
+
+    }
+
+    nav ul li a:hover::before,
+    nav ul li a:hover::after {
+
+      transform: scaleX(1);
+    }
+
+    .belownav {
+      height: 3px;
+      position: absolute;
+      top: 80px;
+      width: 100%;
+      background-color: #66fcf1;
+
+
+    }
+
+    #classeseees {
+      margin-top: 0px;
+      margin-bottom: 10px;
+      padding-top: 0.7em;
+      font-size: 3.5em;
+      font-weight: bold;
+      text-align: center;
+      color: #c5c6c7;
+      /** text-transform: capitalize;**/
+      word-spacing: 10px;
+      letter-spacing: 2px;
+    }
+
+    .hrbelow2 {
+      display: block;
+      margin-top: 00px;
+      margin-left: 11%;
+
+    }
+
+    .hrbelow2 hr {
+      height: 3px;
+      width: 86.3%;
+      color: blue;
+      background-color: #c5c6c7;
+      margin-bottom: 10px;
+      /** position: absolute;
+        left: 200px;
+        top: 100px;**/
+    }
+
+    .heading {
+
+      margin-top: 30px;
+
+    }
+
+    .container {
+      margin-top: 7em;
+      margin-left: 10vh;
+      margin-right: 10vh;
+      margin-bottom: 15vh;
+      display: grid;
+      grid-template-rows: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
+      grid-column-gap: 40px;
+      grid-row-gap: 80px;
+      justify-items: center;
+    }
+
+    /** .container1,
+        .container3,
+        .container5 {
+            margin-top: 20vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+        }**/
+
+    .card {
+      height: 250px;
+      width: 200px;
+      margin: 0 auto;
+      position: relative;
+      perspective: 1000px;
+      padding-top: 20px;
+      text-transform: capitalize;
+      font-size: 20px;
+      background-color: #66fcf1;
+      opacity: 0.8;
+      border-radius: 5%;
+    }
+
+    .card:hover .card-front {
+      transform: rotateY(-90deg);
+    }
+
+    .card .card-front {
+      transform: rotateY(0);
+      transition: all 0.5s ease-in-out 0s;
+      text-transform: capitalize;
+      font-size: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .card .card-front .img {
+      transform: translateY(-59px);
+      height: 60px;
+      width: 60px;
+      color: #c5c6c7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #0b0c10;
+      border-radius: 80%;
+      border: 6px solid var(--clrr);
+      font-weight: bolder;
+      font-size: 50px;
+    }
+
+    /**.card .card-front img {
+        transform: translateY(-65px);
+        background-color: #ffffff;
+        border-radius: 30%;
+        border: 6px solid var(--clr);
+      }**/
+
+    .card .card-front h6 {
+      text-align: center;
+      font-size: 30px;
+    }
+
+    .card-back {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0%;
+      left: 0%;
+      padding: 60px 20px;
+      border: 1px solid #000;
+      box-sizing: border-box;
+      text-align: center;
+      color: #0b0c10;
+      background-color: #c5c6c7;
+      transform: rotateY(90deg);
+      transition: all 0.5s ease-in-out 0s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      border-radius: 5%;
+    }
+
+    .card .card-back .img {
+      /** transform: translateY(-5vh);**/
+      position: absolute;
+      top: -15%;
+      left: 30%;
+      height: 60px;
+      width: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #0b0c10;
+      border-radius: 90%;
+      border: 6px solid var(--clrr);
+      font-weight: bolder;
+      color: #c5c6c7;
+      font-size: 50px;
+    }
+
+    .card-back .links {
+      margin-top: 15px;
+      /**transform: translateY(-35px);**/
+      line-height: 50px;
+      /** padding-top: 50px;**/
+    }
+
+    .card-back a {
+      text-decoration: none;
+      font-size: 30px;
+      margin-top: 25px;
+      font-family: 'lato';
+      color: #000;
+      font-weight: bold;
+    }
+
+    /** .card-back .links {
+            transform: translateY(-10px);
+
+        }**/
+
+    .card-back .linkslab a {
+      text-decoration: none;
+      font-size: 30px;
+    }
+
+    .card:hover .card-back {
+      transform: rotateY(0deg);
+    }
+
+    .card .card-back img {
+      transform: translateY(-85px);
+      background-color: #ffffff;
+      border-radius: 30%;
+      border: 6px solid var(--clr);
+    }
+
+    .card .card-back .labimg {
+      transform: translateY(-50px);
+      background-color: #ffffff;
+      border-radius: 30%;
+      border: 6px solid var(--clr);
+    }
+
+    /** .container2,
+        .container4 {
+
+            margin-top: 14vh;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+
+        }**/
+
+    #BEEE {
+      margin-left: 5px;
+      margin-top: -10px;
+    }
+
+    #EEES {
+      margin-left: 5px;
+      margin-top: -10px;
+    }
+
+    #h4{
+      margin-top: -20px;
+
+
+    }
+
+    #h12, #h11{
+    margin-top: -20px;
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav>
+
+      <h5><span><a href="">AIML</a></span></h5>
+      <ul>
+        <li>
+          <a href="">home</a>
+          <a href="">classes</a>
+          <a href="">books</a>
+          <a href="">lectures</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="heading">
+      <div class="belownav">
+        <hr>
+      </div>
+      <h1 id="classeseees">Energy, Ecology, Environment & Society</h1>
+      <div class="hrbelow2">
+        <hr>
+        <hr>
+      </div>
+    </div>
+    <div class="container">
+      <div class="card">
+        <div class="card-front">
+          <div class="img">1</div>
+          <h6>syllabus discussion <br> & <br> energy</h6>
+        </div>
+        <div class="card-back">
+          <div class="img">1</div>
+          <a href="https://drive.google.com/file/d/1tKu1lsAYSG_ve0l21iBleFw2mr1cISY-/view?usp=sharing" target="_blank"
+            rel="noopener noreferrer">lecture</a>
+          <a href="https://docs.google.com/presentation/d/14E0wQPWVltzo38IkCeLrSwiTqIkT6Wo3/edit?usp=sharing&ouid=109180195391702647133&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer">
+            notes</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-front">
+          <div class="img">2</div>
+          <h6>solar  energy, <br> & <br> radiant  energy</h6>
+        </div>
+        <div class="card-back">
+          <div class="img">2</div>
+          <div class="links">
+            <a href="https://drive.google.com/file/d/14AZ_H0rQCIZMAA9zMLHsYzgXVrY5NZSy/view?usp=sharing" target="_blank"
+              rel="noopener noreferrer">lecture</a>
+            <a href="https://docs.google.com/presentation/d/14E0wQPWVltzo38IkCeLrSwiTqIkT6Wo3/edit?usp=sharing&ouid=109180195391702647133&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer">
+              notes</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-front">
+          <div class="img">3</div>
+          <h6 id="maths">wind energy <br>& <br> hydro energy</h6>
+        </div>
+        <div class="card-back">
+          <div class="img">3</div>
+          <div class="links">
+            <a href="https://drive.google.com/file/d/1K8H3Mfub52KYWg_MK6xkBL-vKOg-lwUK/view?usp=sharing" target="_blank"
+              rel="noopener noreferrer">lecture</a>
+            <a href="https://docs.google.com/presentation/d/14E0wQPWVltzo38IkCeLrSwiTqIkT6Wo3/edit?usp=sharing&ouid=109180195391702647133&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer">
+              notes</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-front">
+          <div class="img">4</div>
+          <h6>sound energy <br> & <br>hydropower energy</h6>
+        </div>
+        <div class="card-back">
+          <div class="img">4</div>
+          <div class="links">
+            <a href="https://drive.google.com/file/d/13jeqrs9mp-4bDvcVVezDwmk1qhxicY_n/view?usp=sharing" target="_blank"
+              rel="noopener noreferrer">lecture</a>
+            <a href="https://docs.google.com/presentation/d/1C896syyjVmtl4NzauFV1jsabo7sQ_xA-/edit?usp=sharing&ouid=109180195391702647133&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer">
+              notes</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-front">
+          <div class="img">5</div>
+          <h6 id="h4">biomass <br> energy <br>& <br> geothermal energy</h6>
+        </div>
+        <div class="card-back">
+          <div class="img">5</div>
+          <div class="links">
+            <a href="https://drive.google.com/file/d/1BXkkJ3yKPBnuGfKIX9USywjHAWUzgBNn/view?usp=sharing" target="_blank"
+              rel="noopener noreferrer">lecture</a>
+            <a href="https://docs.google.com/presentation/d/1C896syyjVmtl4NzauFV1jsabo7sQ_xA-/edit?usp=sharing&ouid=109180195391702647133&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer">
+              notes</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-front">
+          <div class="img">6</div>
+          <h6 id="BEEE">advantages and disadvantages of biomass energy</h6>
+        </div>
+        <div class="card-back">
+          <div class="img">6</div>
+          <div class="links">
+            <a href="https://drive.google.com/file/d/1Zgbajvf7Ad3mbrYjJYrzAz8hcEy6DoRG/view?usp=" target="_blank"
+              rel="noopener noreferrer">lecture</a>
+            <a href="https://docs.google.com/presentation/d/1C896syyjVmtl4NzauFV1jsabo7sQ_xA-/edit?usp=sharing&ouid=109180195391702647133&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer">
+              notes</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-front">
+          <div class="img">7</div>
+          <h6 id="EEES">non <br> renewable <br> energy sources, <br> coal  </h6>
+        </div>
+        <div class="card-back">
+          <div class="img">7</div>
+          <div class="links">
+            <a href="https://drive.google.com/file/d/1kuYlQ4Z-OAP5R-eU2Jg52sT_oejrHsqs/view?usp=sharing" target="_blank"
+              rel="noopener noreferrer">lecture</a>
+            <a href="https://docs.google.com/presentation/d/12l0vePIh3SwFO2OEnS6IqMfF3mOp2rcS/edit?usp=sharing&ouid=109180195391702647133&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer">
+              notes</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-front">
+          <div class="img">8</div>
+          <h6>oil <br> & <br> natural gas</h6>
+        </div>
+        <div class="card-back">
+          <div class="img">8</div>
+          <div class="links">
+            <a href="https://drive.google.com/file/d/1mAeDXsfCpTIzQN-EA1E6ZjCw-n8ftOMl/view?usp=sharing" target="_blank"
+              rel="noopener noreferrer">lecture</a>
+            <a href="https://docs.google.com/presentation/d/1xrxzhru3QO8EHjKwdwlku5Wfh-7GGTpp/edit?usp=sharing&ouid=109180195391702647133&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer">
+              notes</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-front">
+          <div class="img">9</div>
+          <h6>atom <br>& <br> nuclear energy</h6>
+        </div>
+        <div class="card-back">
+          <div class="img">9</div>
+          <div class="links">
+            <a href="https://drive.google.com/file/d/16bb89A7YUAdX9mDKIvjQ8qF2pxznEtmX/view?usp=sharing" target="_blank"
+              rel="noopener noreferrer">lecture</a>
+            <a href="https://docs.google.com/presentation/d/1xrxzhru3QO8EHjKwdwlku5Wfh-7GGTpp/edit?usp=sharing&ouid=109180195391702647133&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer">
+              notes</a>
+          </div>
+        </div>
+      </div>
+
+     
+
+      <div class="card">
+        <div class="card-front">
+          <div class="img">10</div>
+          <h6>pros & cons <br> of nuclear energy</h6>
+        </div>
+        <div class="card-back">
+          <div class="img">10</div>
+          <div class="links">
+            <a href="https://drive.google.com/file/d/1uoGo3fKR3RNLl4nFo2JH6Z-0JtOTABna/view?usp=sharing" target="_blank"
+              rel="noopener noreferrer">lecture</a>
+            <a href="https://docs.google.com/presentation/d/1xrxzhru3QO8EHjKwdwlku5Wfh-7GGTpp/edit?usp=sharing&ouid=109180195391702647133&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer">
+              notes</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-front">
+          <div class="img">11</div>
+          <h6 id="h11">energy <br> policies of international organisations <br>  I</h6>
+        </div>
+        <div class="card-back">
+          <div class="img">11</div>
+          <div class="links">
+            <a href="https://drive.google.com/file/d/1SZU-LueJlD2kqo1JzoHW8r8D6kNzH-g6/view?usp=sharing" target="_blank"
+              rel="noopener noreferrer">lecture</a>
+            <a href="https://docs.google.com/presentation/d/1Lyk9qsFm7KV7B7o3bRaShLpy5uZFj5ds/edit?usp=sharing&ouid=109180195391702647133&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer">
+              notes</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-front">
+          <div class="img">12</div>
+          <h6 id="h12">energy <br> policies of international organisations <br>  II</h6>
+        </div>
+        <div class="card-back">
+          <div class="img">12</div>
+          <div class="links">
+            <a href="https://drive.google.com/file/d/1nVdYwEHIacsCTPLwKib0qTzQjSKmTP9F/view?usp=sharing" target="_blank"
+              rel="noopener noreferrer">lecture</a>
+            <a href="https://docs.google.com/presentation/d/1Lyk9qsFm7KV7B7o3bRaShLpy5uZFj5ds/edit?usp=sharing&ouid=109180195391702647133&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer">
+              notes</a>
+          </div>
+        </div>
+      </div>
+
+      <!---<div class="card">
+        <div class="card-front">
+          <div class="img">13</div>
+          <h6>Introduction to artificial intelligence</h6>
+        </div>
+        <div class="card-back">
+          <div class="img">13</div>
+          <div class="links">
+            <a href="http://moodle.mitsgwalior.in/mod/lecture/view.php?id=62038" target="_blank"
+              rel="noopener noreferrer">lecture</a>
+            <a href="https://meet.google.com/xve-xdbg-zjm" target="_blank" rel="noopener noreferrer">
+              notes</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-front">
+          <div class="img">14</div>
+          <h6>Introduction to artificial intelligence</h6>
+        </div>
+        <div class="card-back">
+          <div class="img">14</div>
+          <div class="links">
+            <a href="http://moodle.mitsgwalior.in/mod/lecture/view.php?id=62038" target="_blank"
+              rel="noopener noreferrer">lecture</a>
+            <a href="https://meet.google.com/xve-xdbg-zjm" target="_blank" rel="noopener noreferrer">
+              notes</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-front">
+          <div class="img">15</div>
+          <h6>Introduction to artificial intelligence</h6>
+        </div>
+        <div class="card-back">
+          <div class="img">15</div>
+          <div class="links">
+            <a href="http://moodle.mitsgwalior.in/mod/lecture/view.php?id=62038" target="_blank"
+              rel="noopener noreferrer">lecture</a>
+            <a href="https://meet.google.com/xve-xdbg-zjm" target="_blank" rel="noopener noreferrer">
+              notes</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-front">
+          <div class="img">16</div>
+          <h6>Introduction to artificial intelligence</h6>
+        </div>
+        <div class="card-back">
+          <div class="img">16</div>
+          <div class="links">
+            <a href="http://moodle.mitsgwalior.in/mod/lecture/view.php?id=62038" target="_blank"
+              rel="noopener noreferrer">lecture</a>
+            <a href="https://meet.google.com/xve-xdbg-zjm" target="_blank" rel="noopener noreferrer">
+              notes</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-front">
+          <div class="img">17</div>
+          <h6>Introduction to artificial intelligence</h6>
+        </div>
+        <div class="card-back">
+          <div class="img">17</div>
+          <div class="links">
+            <a href="http://moodle.mitsgwalior.in/mod/lecture/view.php?id=62038" target="_blank"
+              rel="noopener noreferrer">lecture</a>
+            <a href="https://meet.google.com/xve-xdbg-zjm" target="_blank" rel="noopener noreferrer">
+              notes</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-front">
+          <div class="img">18</div>
+          <h6>Introduction to artificial intelligence</h6>
+        </div>
+        <div class="card-back">
+          <div class="img">18</div>
+          <div class="links">
+            <a href="http://moodle.mitsgwalior.in/mod/lecture/view.php?id=62038" target="_blank"
+              rel="noopener noreferrer">lecture</a>
+            <a href="https://meet.google.com/xve-xdbg-zjm" target="_blank" rel="noopener noreferrer">
+              notes</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-front">
+          <div class="img">19</div>
+          <h6>dimensionality reduction & manifold learnings</h6>
+        </div>
+        <div class="card-back">
+          <div class="img">19</div>
+          <div class="links">
+            <a href="http://moodle.mitsgwalior.in/mod/lecture/view.php?id=62038" target="_blank"
+              rel="noopener noreferrer">lecture</a>
+            <a href="https://meet.google.com/xve-xdbg-zjm" target="_blank" rel="noopener noreferrer">
+              notes</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-front">
+          <div class="img">20</div>
+          <h6>dimensionality reduction & manifold learnings</h6>
+        </div>
+        <div class="card-back">
+          <div class="img">20</div>
+          <div class="links">
+            <a href="http://moodle.mitsgwalior.in/mod/lecture/view.php?id=62038" target="_blank"
+              rel="noopener noreferrer">lecture</a>
+            <a href="https://meet.google.com/xve-xdbg-zjm" target="_blank" rel="noopener noreferrer">
+              notes</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-front">
+          <div class="img">21</div>
+          <h6>dimensionality reduction & manifold learnings</h6>
+        </div>
+        <div class="card-back">
+          <div class="img">21</div>
+          <div class="links">
+            <a href="http://moodle.mitsgwalior.in/mod/lecture/view.php?id=62038" target="_blank"
+              rel="noopener noreferrer">lecture</a>
+            <a href="https://meet.google.com/xve-xdbg-zjm" target="_blank" rel="noopener noreferrer">
+              notes</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-front">
+          <div class="img">22</div>
+          <h6>dimensionality reduction & manifold learnings</h6>
+        </div>
+        <div class="card-back">
+          <div class="img">22</div>
+          <div class="links">
+            <a href="http://moodle.mitsgwalior.in/mod/lecture/view.php?id=62038" target="_blank"
+              rel="noopener noreferrer">lecture</a>
+            <a href="https://meet.google.com/xve-xdbg-zjm" target="_blank" rel="noopener noreferrer">
+              notes</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-front">
+          <div class="img">23</div>
+          <h6>dimensionality reduction & manifold learnings</h6>
+        </div>
+        <div class="card-back">
+          <div class="img">23</div>
+          <div class="links">
+            <a href="http://moodle.mitsgwalior.in/mod/lecture/view.php?id=62038" target="_blank"
+              rel="noopener noreferrer">lecture</a>
+            <a href="https://meet.google.com/xve-xdbg-zjm" target="_blank" rel="noopener noreferrer">
+              notes</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-front">
+          <div class="img">24</div>
+          <h6>dimensionality reduction & manifold learnings</h6>
+        </div>
+        <div class="card-back">
+          <div class="img">24</div>
+          <div class="links">
+            <a href="http://moodle.mitsgwalior.in/mod/lecture/view.php?id=62038" target="_blank"
+              rel="noopener noreferrer">lecture</a>
+            <a href="https://meet.google.com/xve-xdbg-zjm" target="_blank" rel="noopener noreferrer">
+              notes</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-front">
+          <div class="img">25</div>
+          <h6>dimensionality reduction & manifold learnings</h6>
+        </div>
+        <div class="card-back">
+          <div class="img">25</div>
+          <div class="links">
+            <a href="http://moodle.mitsgwalior.in/mod/lecture/view.php?id=62038" target="_blank"
+              rel="noopener noreferrer">lecture</a>
+            <a href="https://meet.google.com/xve-xdbg-zjm" target="_blank" rel="noopener noreferrer">
+              notes</a>
+          </div>
+        </div>
+      </div> --->
+    </div>
+  </header>
+</body>
+
+</html>

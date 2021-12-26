@@ -1,0 +1,593 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital@1&display=swap");
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Lato", sans-serif;
+}
+
+header {
+    background-color: rgba(11, 12, 16, 1);
+    height: 45.6em;
+    width: 100%;
+    z-index: -1;
+}
+
+nav {
+    background-color: rgba(11, 12, 16, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-transform: capitalize;
+    width: 100%;
+    height: 9vh;
+    padding-top: 1em;
+
+
+}
+
+nav h5 a {
+    text-decoration: none;
+    font-size: 2.8em;
+    color: #66fcf1;
+}
+
+nav ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 50px;
+    text-decoration: none;
+    font-size: 1.4em;
+    font-weight: 400;
+    color: #c5c6c7;
+    position: relative;
+    width: 80px;
+}
+
+nav ul li a:last-child {
+    margin-right: 0;
+
+}
+
+nav ul li a::before,
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #66fcf1;
+    left: 0;
+    transform: scaleX(0);
+    transition: all .5s;
+
+}
+
+nav ul li a::before {
+    top: 0;
+    transform-origin: left;
+
+}
+
+nav ul li a::after {
+    bottom: 0;
+    transform-origin: right;
+
+}
+
+nav ul li a:hover::before,
+nav ul li a:hover::after {
+
+    transform: scaleX(1);
+}
+
+
+header h2 {
+    font-size: 6vh;
+    text-transform: capitalize;
+    padding-left: 23%;
+    padding-top: 10%;
+    margin-bottom: 0px;
+    color: #66fcf1;
+}
+
+header p {
+    font-size: 4vh;
+    padding-left: 10%;
+    padding-right: 10%;
+    text-align: center;
+    font-weight: 500;
+    color: #c5c6c7;
+}
+
+:root {
+    --clr: #c5c6c7;
+    --clrr: #0b0c10;
+}
+
+.container-main {
+    background-color: #c5c6c7;
+    margin-top: -70px;
+    height: 70em;
+    width: 100%;
+
+}
+
+.container1 {
+    position: relative;
+    padding-top: 15vh;
+    padding-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /**  padding-top: 20vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;**/
+}
+
+.card {
+    height: 45vh;
+    width: 250px;
+    margin: 0 auto;
+    position: relative;
+    perspective: 1000px;
+    padding-top: 20px;
+    text-transform: capitalize;
+    font-size: 20px;
+    background-color: #0b0c10;
+    color: #66fcf1;
+    border-radius: 5%;
+}
+
+.card:hover .card-front {
+    transform: rotateY(-90deg);
+
+}
+
+.card .card-front {
+
+    transform: rotateY(0);
+    transition: all 0.5s ease-in-out 0s;
+    text-transform: capitalize;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.card .card-front img {
+    height: 70px;
+    width: 70px;
+    border-radius: 30%;
+    transform: translateY(-65px);
+    background-color: #c5c6c7;
+    border-radius: 30%;
+    border: 6px solid var(--clr);
+}
+
+.card .card-front h6 {
+    text-align: center;
+    font-size: 30px;
+    transform: translateY(-80px);
+
+}
+
+#maths{
+
+    font-size: 30px;
+    position: absolute;
+    top: 4em;
+}
+
+.card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    padding: 60px 20px;
+    /** border: 1px solid #000;**/
+    box-sizing: border-box;
+    text-align: center;
+    color: #0b0c10;
+    background-color: #66fcf1;
+    transform: rotateY(90deg);
+    transition: all 0.5s ease-in-out 0s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 5%;
+    opacity: 1;
+
+}
+
+.card-back .links {
+    transform: translateY(-35px);
+    line-height: 50px;
+    /** padding-top: 50px;**/
+
+}
+
+.card-back a {
+    text-decoration: none;
+    font-size: 35px;
+    font-weight: bold;
+    margin-top: 25px;
+    color: #0b0c10;
+    font-weight: bold;
+
+
+}
+
+.card-back .linkslab {
+    transform: translateY(-10px);
+
+}
+
+.card-back .linkslab a {
+    text-decoration: none;
+    font-size: 30px;
+
+}
+
+.card:hover .card-back {
+    transform: rotateY(0deg);
+}
+
+.card .card-back img {
+    height: 70px;
+    width: 70px;
+    border-radius: 30%;
+    transform: translateY(-110px);
+    background-color: #c5c6c7;
+    border-radius: 30%;
+    border: 6px solid var(--clr);
+}
+
+
+.card .card-back .labimg {
+    transform: translateY(-76px);
+    background-color: #c5c6c7;
+    border-radius: 30%;
+    border: 6px solid var(--clr);
+}
+
+.card .card-back .linkslab a{
+     font-size: 35px;
+
+}
+.container2 {
+
+    margin-top: 14vh;
+    padding-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+
+}
+
+#beeecard{
+   position: absolute;
+    left: 320px;
+    top: -30px;
+
+}
+
+#eeescard{
+    position: absolute;
+    left: 790px;
+    top: -29px;
+
+}
+
+.container2 .card .card-front h6 {
+    text-align: center;
+    font-size: 30px;
+    transform: translateY(0px);
+
+}
+
+#BEEE {
+    margin-left: 5px;
+    margin-top: -10px;
+
+}
+
+#EEES {
+    margin-left: 5px;
+    margin-top: -10px;
+}
+
+#classes {
+    margin-top: 0px;
+    margin-bottom: 10px;
+    padding-top: 0.4em;
+    font-size: 5em;
+    font-weight: bolder;
+    text-align: center;
+}
+
+/**.hrabove hr,**/
+.hrbelow hr {
+    height: 6px;
+    width: 300px;
+    color: blue;
+    background-color: black;
+    margin-bottom: 10px;
+}
+
+/**.hrabove {
+
+    position: absolute;
+    top: 680px;
+    left: 39%;
+
+}**/
+
+ .hrbelow {
+
+    position: absolute;
+    top: 780px;
+    left: 39%;
+
+}
+
+.belownav {
+    height: 3px;
+    width: 100%;
+    background-color: #66fcf1;
+
+}
+#getstarted{
+   margin-top: 8px; 
+
+    text-align: center;
+    height: 6vh;
+    width: 14%;
+    text-transform: capitalize;
+    font-family: 'lato';
+    font-weight: bolder;
+    border: 2px solid #66fcf1;
+    border-radius: 12px;
+    font-size: 25px;
+    position: absolute;
+    left: 41%;
+    background-color: #66fcf1;
+    color: #0b0c10;
+
+}
+.container-main2 {
+    background-color: #0b0c10;
+    margin-top: -70px;
+    height: 65em;
+    width: 100%;
+
+}
+
+.container3 {
+    position: relative;
+    padding-top: 15vh;
+    padding-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /**  padding-top: 20vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;**/
+}
+
+ .container-main2 .card {
+    height: 45vh;
+    width: 250px;
+    margin: 0 auto;
+    position: relative;
+    perspective: 1000px;
+    padding-top: 20px;
+    text-transform: capitalize;
+    font-size: 20px;
+    background-color: #66fcf1;
+    opacity: 0.8;
+    color: #0b0c10;
+    border-radius: 5%;
+}
+
+ .container-main2.card:hover .card-front {
+    transform: rotateY(-90deg);
+
+}
+
+.container-main2 .card .card-front {
+
+    transform: rotateY(0);
+    transition: all 0.5s ease-in-out 0s;
+    text-transform: capitalize;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.container-main2 .card .card-front img {
+    height: 70px;
+    width: 70px;
+    border-radius: 30%;
+    transform: translateY(-65px);
+    background-color: #0b0c10;
+    border-radius: 30%;
+    border: 6px solid var(--clrr);
+}
+
+.container-main2 .card .card-front h6 {
+    text-align: center;
+    font-size: 30px;
+    transform: translateY(-80px);
+
+}
+
+.container-main2 .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    padding: 60px 20px;
+    /** border: 1px solid #000;**/
+    box-sizing: border-box;
+    text-align: center;
+    color: #0b0c10;
+    background-color: #c5c6c7;
+    transform: rotateY(90deg);
+    transition: all 0.5s ease-in-out 0s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 5%;
+    opacity: 1;
+
+}
+
+.container-main2 .card-back .links {
+    transform: translateY(-35px);
+    line-height: 50px;
+    /** padding-top: 50px;**/
+
+}
+
+.container-main2 .card-back a {
+    text-decoration: none;
+    font-size: 35px;
+    font-weight: bold;
+    margin-top: 25px;
+    color: #0b0c10;
+    font-weight: bold;
+
+
+}
+
+.container-main2 .card-back .linkslab {
+    transform: translateY(-10px);
+
+}
+
+.container-main2 .card-back .linkslab a {
+    text-decoration: none;
+    font-size: 30px;
+
+}
+
+.container-main2 .card:hover .card-back {
+    transform: rotateY(0deg);
+}
+
+.container-main2 .card .card-back img {
+    height: 70px;
+    width: 70px;
+    border-radius: 30%;
+    transform: translateY(-110px);
+    background-color: #0b0c10;
+    border-radius: 30%;
+    border: 6px solid var(--clrr);
+}
+
+
+.container-main2 .card .card-back .labimg {
+    transform: translateY(-76px);
+    background-color: #0b0c10;
+    border-radius: 30%;
+    border: 6px solid var(--clrr);
+}
+
+.container-main2 .card .card-back .linkslab a{
+     font-size: 35px;
+
+}
+.container4 {
+
+    margin-top: 14vh;
+    padding-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+
+}
+
+#beeebooks{
+   position: absolute;
+    left: 320px;
+    top: -30px;
+
+}
+
+#eeesbooks{
+    position: absolute;
+    left: 790px;
+    top: -29px;
+
+}
+
+.container4 .card .card-front h6 {
+    text-align: center;
+    font-size: 30px;
+    transform: translateY(0px);
+
+}
+
+#BEEE2 {
+    margin-left: 5px;
+    margin-top: -10px;
+
+}
+
+#EEES2 {
+    margin-left: 5px;
+    margin-top: -10px;
+}
+
+#classes2 {
+    margin-top: 0px;
+    margin-bottom: 10px;
+    padding-top: 0.7em;
+    font-size: 5em;
+    font-weight: bolder;
+    text-align: center;
+    color: #c5c6c7;
+   /** text-transform: capitalize;**/
+    word-spacing: 10px;
+}
+
+/**.hrabove2 hr,**/
+.hrbelow2 hr {
+    height: 5px;
+    width: 700px;
+    color: blue;
+    background-color: #c5c6c7;
+    margin-bottom: 10px;
+    
+}
+
+.hrbelow2 {
+
+    position: absolute;
+    top: 1860px ;
+    left: 24%;
+
+}
